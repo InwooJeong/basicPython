@@ -155,3 +155,121 @@ plt.ylabel("y",size=14)
 plt.grid()
 
 plt.show()
+
+# +
+import numpy as np
+import matplotlib.pyplot as plt
+
+def my_sin(x):
+    return np.sin(x)
+
+def my_cos(x):
+    return np.cos(x)
+
+x = np.linspace(-2*np.pi,2*np.pi)
+y_sin = my_sin(x)
+y_cos = my_cos(x)
+
+plt.plot(x,y_sin,label="sin")
+plt.plot(x,y_cos,label="cos")
+plt.legend()
+
+plt.xlabel("x",size=14)
+plt.ylabel("y",size=14)
+plt.grid()
+
+plt.show()
+# -
+
+import numpy as np
+a = np.array([1,3,2,5,4])
+y = np.sum(a)  # ∑
+print(y)
+
+import numpy as np
+a = np.array([1,3,2,5,4])
+y = np.prod(a)  # ⫪
+print(y)
+
+# +
+# 난수 생성
+import numpy as np
+
+r_int = np.random.randint(6) + 1  # 0~5까지 난수에 1을 더함
+print(r_int)
+# -
+
+r_dec = np.random.rand()
+print(r_dec)
+
+# +
+# %matplotlib inline
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+n = 1000
+x = np.random.rand(n)
+y = np.random.rand(n)
+
+plt.scatter(x,y)
+plt.grid()
+plt.show()
+
+# +
+# %matplotlib inline
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+# 정규분포
+n = 1000
+x = np.random.randn(n)
+y = np.random.randn(n)
+
+plt.scatter(x,y)
+plt.grid()
+plt.show()
+
+# +
+import numpy as np
+
+x = [-5,5,-1.28,np.sqrt(5),-np.pi/2]
+print(np.abs(x))
+
+# +
+x = np.linspace(-np.pi,np.pi)  # -⫪ 부터 ⫪(라디안)까지 
+y_sin = np.abs(np.sin(x))
+y_cos = np.abs(np.cos(x))
+
+plt.scatter(x,y_sin,label="sin")
+plt.scatter(x,y_cos,label="cos")
+plt.legend()
+
+plt.xlabel("x",size=14)
+plt.ylabel("y",size=14)
+plt.grid()
+
+plt.show()
+
+# +
+x = np.linspace(-4,4)
+y = x**2 - 4
+
+plt.scatter(x,y)
+plt.xlabel("x",size=14)
+plt.ylabel("y",size=14)
+plt.grid()
+
+plt.show()
+
+# +
+x = np.linspace(-4,4)
+y = np.abs(x**2 - 4)
+
+plt.scatter(x,y)
+plt.xlabel("x",size=14)
+plt.ylabel("y",size=14)
+plt.grid()
+
+plt.show()

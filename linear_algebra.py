@@ -124,3 +124,97 @@ print(np.linalg.norm(b))
 print("--- L1놈 ---")
 print(np.linalg.norm(a,1))
 print(np.linalg.norm(b,1))
+# -
+
+# - 행렬 곱
+
+# +
+a = np.array([[0,1,2],
+             [1,2,3]])
+
+b = np.array([[2,1],
+             [2,1],
+             [2,1]])
+
+print(np.dot(a,b))
+# -
+
+# - 아다마르 곱
+#     - 요소 별 길이가 같아야함!
+
+# +
+a = np.array([[0,1,2],
+             [3,4,5],
+             [6,7,8]])
+
+b = np.array([[0,1,2],
+             [2,0,1],
+             [1,2,0]])
+
+print(a*b)
+# -
+
+# - 전치
+
+# +
+a = np.array([[1,2,3],
+             [4,5,6]])
+
+print(a.T)
+# -
+
+# - 전치와 행렬 곱
+
+# +
+a = np.array([[1,2,3],
+             [4,5,6]])
+
+b = np.array([[1,2,3],
+             [4,5,6]])
+
+#print(np.dot(a,b))  # shapes (2,3) and (2,3) not aligned: 3 (dim 1) != 2 (dim 0)
+print(np.dot(a,b.T))
+# -
+
+# - 단위 행렬
+
+print(np.eye(2))
+print()
+print(np.eye(3))
+print()
+print(np.eye(4))
+
+# - 역행렬 존재 여부
+#     
+#     (a b
+#      c d)
+#      
+#     - ad - bc = 0 역행렬이 존재하지 않음
+#     
+# - 역행렬
+# 1/ad-bc (d -b -c a)
+
+# +
+a = np.array([[1,2],
+            [3,4]])
+
+print(np.linalg.det(a))
+
+b = np.array([[1,2],
+            [0,0]])
+
+print(np.linalg.det(b))
+# -
+
+# - 역행렬이 존재한다면 linalg.inv()로 구할 수 있다.
+
+# +
+a = np.array([[1,2],
+            [3,4]])
+
+print(np.linalg.inv(a))
+
+b = np.array([[1,2],
+            [0,0]])
+
+#print(np.linalg.inv(b))  # Singular matrix
